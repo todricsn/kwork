@@ -582,12 +582,30 @@ body {
 }
 
 .case-modal__content {
+  position: relative;
   display: grid;
   align-content: center;
   gap: 26px;
   max-height: min(820px, 88vh);
   overflow-y: auto;
   padding: clamp(34px, 5vw, 64px);
+}
+
+.case-modal__content::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background:
+    linear-gradient(90deg, rgba(8, 8, 8, 0.9), rgba(8, 8, 8, 0.58)),
+    linear-gradient(180deg, rgba(8, 8, 8, 0.76), rgba(8, 8, 8, 0.92)),
+    url("assets/case-text-background.jpeg") center / cover no-repeat;
+  opacity: 0.28;
+  pointer-events: none;
+}
+
+.case-modal__content > * {
+  position: relative;
+  z-index: 1;
 }
 
 .case-modal__type {
