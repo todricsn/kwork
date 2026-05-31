@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="Telegram">
+  <circle cx="48" cy="48" r="32" fill="none" stroke="#111" stroke-width="2"/>
+  <path d="M28 45.5 67 29.5c2-.8 3.4.8 2.6 3.1L59.2 66.3c-.6 2-2.5 2.4-4 .9L46.8 57l-8 7.5c-1.1 1-2.6.4-2.9-1.1L34.2 53 27.8 50c-2.2-1-2.1-3.6.2-4.5Z" fill="none" stroke="#111" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M35.2 52.8 58.8 38.5 46.8 57" fill="none" stroke="#111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
