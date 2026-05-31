@@ -708,10 +708,19 @@ body {
 }
 
 .case-modal__review footer {
-  color: rgba(247, 247, 243, 0.62);
   font-size: 11px;
   letter-spacing: 3px;
   text-transform: uppercase;
+}
+
+.case-modal__review footer a {
+  color: rgba(247, 247, 243, 0.62);
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.case-modal__review footer a:hover {
+  color: rgba(247, 247, 243, 0.9);
 }
 
 body.modal-open {

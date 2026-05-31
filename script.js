@@ -9,7 +9,7 @@ const modalWork = document.querySelector(".case-modal__work");
 const modalReview = document.querySelector(".case-modal__review");
 const modalReviewProject = document.querySelector(".case-modal__review-project");
 const modalReviewText = document.querySelector(".case-modal__review p");
-const modalReviewFooter = document.querySelector(".case-modal__review footer");
+const modalReviewFooter = document.querySelector(".case-modal__review footer a");
 const modalCloseButtons = document.querySelectorAll(".case-modal__close, .case-modal__backdrop");
 
 let lastFocusedElement = null;
