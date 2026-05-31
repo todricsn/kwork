@@ -338,6 +338,114 @@ body {
   transform: scale(1.035);
 }
 
+.reviews-inner {
+  width: min(1180px, 100%);
+}
+
+.reviews-head {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 820px);
+  gap: clamp(28px, 6vw, 88px);
+  align-items: start;
+  margin-bottom: 64px;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 2.6vw, 34px);
+}
+
+.review-card {
+  position: relative;
+  display: grid;
+  gap: 34px;
+  min-height: 360px;
+  border: 1px solid rgba(243, 243, 241, 0.18);
+  border-radius: 8px;
+  padding: clamp(28px, 4vw, 46px);
+  background: linear-gradient(145deg, rgba(12, 12, 12, 0.94), rgba(0, 0, 0, 0.74));
+  overflow: hidden;
+}
+
+.review-card::before {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  color: rgba(243, 243, 241, 0.09);
+  content: "✦";
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 96px;
+  line-height: 1;
+}
+
+.review-card--wide {
+  transform: translateY(44px);
+}
+
+.review-card__top,
+.review-card footer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.review-card__project,
+.review-card__rating,
+.review-card small {
+  color: rgba(243, 243, 241, 0.62);
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.review-card__rating {
+  color: #f7f7f3;
+}
+
+.review-card blockquote {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: rgba(247, 247, 243, 0.88);
+  font-family: Didot, "Bodoni 72", "Bodoni MT", Georgia, serif;
+  font-size: clamp(30px, 3.4vw, 48px);
+  font-weight: 400;
+  line-height: 1.16;
+}
+
+.review-card footer {
+  justify-content: flex-start;
+  border-top: 1px solid rgba(243, 243, 241, 0.18);
+  padding-top: 22px;
+}
+
+.review-card__avatar {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(243, 243, 241, 0.34);
+  border-radius: 50%;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+}
+
+.review-card strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.reviews-kwork-link {
+  margin-top: 86px;
+}
+
 .case-modal {
   position: fixed;
   inset: 0;
@@ -481,6 +589,36 @@ body {
   background: currentColor;
 }
 
+.case-modal__review {
+  margin: 4px 0 0;
+  border-top: 1px solid rgba(247, 247, 243, 0.16);
+  padding-top: 24px;
+}
+
+.case-modal__review-project {
+  display: block;
+  margin-bottom: 14px;
+  color: rgba(247, 247, 243, 0.56);
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.case-modal__review p {
+  margin: 0 0 14px;
+  color: rgba(247, 247, 243, 0.84);
+  font-family: Didot, "Bodoni 72", "Bodoni MT", Georgia, serif;
+  font-size: 26px;
+  line-height: 1.2;
+}
+
+.case-modal__review footer {
+  color: rgba(247, 247, 243, 0.62);
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
 body.modal-open {
   overflow: hidden;
 }
@@ -549,11 +687,13 @@ body.modal-open {
 
   .split-layout,
   .portfolio-head,
+  .reviews-head,
   .service-grid {
     grid-template-columns: 1fr;
   }
 
-  .portfolio-grid {
+  .portfolio-grid,
+  .reviews-grid {
     grid-template-columns: 1fr;
   }
 
@@ -584,6 +724,20 @@ body.modal-open {
 
   .case-modal__content h2 {
     font-size: 42px;
+  }
+
+  .review-card,
+  .review-card--wide {
+    min-height: auto;
+    transform: none;
+  }
+
+  .review-card blockquote {
+    font-size: 30px;
+  }
+
+  .reviews-kwork-link {
+    margin-top: 42px;
   }
 
   .content-section h2 {
