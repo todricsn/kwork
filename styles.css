@@ -587,6 +587,8 @@ body {
   display: grid;
   align-content: center;
   gap: 26px;
+  max-height: min(820px, 88vh);
+  overflow-y: auto;
   padding: clamp(34px, 5vw, 64px);
 }
 
@@ -652,14 +654,27 @@ body {
 }
 
 .case-modal__review {
-  margin: 4px 0 0;
+  position: relative;
+  margin: 0;
   border-top: 1px solid rgba(247, 247, 243, 0.16);
-  padding-top: 24px;
+  padding-top: 22px;
+}
+
+.case-modal__review::before {
+  position: absolute;
+  top: 18px;
+  right: 0;
+  color: rgba(247, 247, 243, 0.05);
+  content: "“";
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 92px;
+  line-height: 0.8;
+  pointer-events: none;
 }
 
 .case-modal__review-project {
   display: block;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   color: rgba(247, 247, 243, 0.56);
   font-size: 11px;
   letter-spacing: 4px;
@@ -667,16 +682,18 @@ body {
 }
 
 .case-modal__review p {
-  margin: 0 0 14px;
+  position: relative;
+  margin: 0 0 12px;
   color: rgba(247, 247, 243, 0.84);
-  font-family: Didot, "Bodoni 72", "Bodoni MT", Georgia, serif;
-  font-size: 26px;
-  line-height: 1.2;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.65;
 }
 
 .case-modal__review footer {
   color: rgba(247, 247, 243, 0.62);
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 3px;
   text-transform: uppercase;
 }
