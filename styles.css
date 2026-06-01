@@ -63,8 +63,7 @@ body {
 }
 
 .primary-nav a,
-.text-link,
-.contact-row a {
+.text-link {
   color: inherit;
   text-decoration: none;
 }
@@ -731,13 +730,53 @@ body.modal-open {
   min-height: 62vh;
 }
 
-.contact-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: clamp(24px, 5vw, 76px);
-  margin-top: 52px;
-  font-size: clamp(18px, 2vw, 24px);
-  letter-spacing: 5px;
+.contacts-inner {
+  width: min(1120px, 100%);
+}
+
+.contacts-title-image {
+  display: block;
+  width: min(820px, 100%);
+  margin: -24px auto 0;
+}
+
+.contacts-links-image-wrap {
+  position: relative;
+  width: min(920px, 100%);
+  margin: clamp(18px, 4vw, 44px) auto 0;
+}
+
+.contacts-links-image {
+  display: block;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.contacts-hit {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.contacts-hit--kwork {
+  left: 0;
+  width: 34%;
+}
+
+.contacts-hit--tg {
+  left: 40%;
+  width: 20%;
+}
+
+.contacts-hit--email {
+  right: 0;
+  width: 35%;
+}
+
+.contacts-hit:focus-visible {
+  outline: 1px solid rgba(247, 247, 243, 0.68);
+  outline-offset: 8px;
 }
 
 @media (max-width: 560px) {
@@ -852,9 +891,13 @@ body.modal-open {
     font-size: 18px;
   }
 
-  .contact-row {
-    display: grid;
-    gap: 22px;
-    font-size: 17px;
+  .contacts-title-image {
+    width: min(420px, 112vw);
+    margin-top: -16px;
+  }
+
+  .contacts-links-image-wrap {
+    width: min(520px, 120vw);
+    margin-top: 8px;
   }
 }
