@@ -437,7 +437,17 @@ body {
   color: rgba(243, 243, 241, 0.62);
   font-size: 12px;
   letter-spacing: 0.24em;
+  text-decoration: none;
   text-transform: uppercase;
+}
+
+.review-card__badge {
+  display: inline-block;
+  transition: color 160ms ease;
+}
+
+.review-card__badge:hover {
+  color: rgba(243, 243, 241, 0.9);
 }
 
 .review-card__rating {
