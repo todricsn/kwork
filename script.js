@@ -5,6 +5,7 @@ const modalImage = document.querySelector(".case-modal__media img");
 const modalTitle = document.querySelector("#case-modal-title");
 const modalType = document.querySelector(".case-modal__type");
 const modalDescription = document.querySelector(".case-modal__description");
+const modalLinks = document.querySelector(".case-modal__links");
 const modalWork = document.querySelector(".case-modal__work");
 const modalReview = document.querySelector(".case-modal__review");
 const modalReviewProject = document.querySelector(".case-modal__review-project");
@@ -22,12 +23,32 @@ function openCaseModal(card) {
     .split("|")
     .map((item) => item.trim())
     .filter(Boolean);
+  const linkItems = (card.dataset.caseLinks || "")
+    .split("|")
+    .map((item) => {
+      const separatorIndex = item.indexOf(":");
+
+      return {
+        label: item.slice(0, separatorIndex).trim(),
+        url: item.slice(separatorIndex + 1).trim(),
+      };
+    })
+    .filter((item) => item.label && item.url);
 
   modalImage.src = image.currentSrc || image.src;
   modalImage.alt = image.alt;
   modalTitle.textContent = card.dataset.caseTitle || card.querySelector("strong")?.textContent || "";
   modalType.textContent = card.dataset.caseType || card.querySelector("small")?.textContent || "";
   modalDescription.textContent = card.dataset.caseDescription || "";
+  modalLinks.hidden = linkItems.length === 0;
+  modalLinks.replaceChildren(...linkItems.map((item) => {
+    const link = document.createElement("a");
+    link.href = item.url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = item.label;
+    return link;
+  }));
   modalWork.replaceChildren(...workItems.map((item) => {
     const li = document.createElement("li");
     li.textContent = item;
