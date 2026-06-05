@@ -10,7 +10,7 @@ const modalWork = document.querySelector(".case-modal__work");
 const modalReview = document.querySelector(".case-modal__review");
 const modalReviewProject = document.querySelector(".case-modal__review-project");
 const modalReviewText = document.querySelector(".case-modal__review p");
-const modalReviewFooter = document.querySelector(".case-modal__review footer a");
+const modalReviewFooter = document.querySelector(".case-modal__review footer");
 const modalCloseButtons = document.querySelectorAll(".case-modal__close, .case-modal__backdrop");
 
 let lastFocusedElement = null;
@@ -60,8 +60,20 @@ function openCaseModal(card) {
   if (hasReview) {
     modalReviewProject.textContent = card.dataset.reviewProject || "Отзыв";
     modalReviewText.textContent = card.dataset.reviewText;
-    modalReviewFooter.href = card.dataset.reviewUrl || "https://kwork.ru/user/avismirea";
-    modalReviewFooter.textContent = `${card.dataset.reviewAuthor || "Клиент"} · отзыв с KWORK`;
+
+    const authorLink = document.createElement("a");
+    authorLink.href = card.dataset.reviewUrl || "https://kwork.ru/user/avismirea";
+    authorLink.target = "_blank";
+    authorLink.rel = "noopener noreferrer";
+    authorLink.textContent = card.dataset.reviewAuthor || "Клиент";
+
+    const kworkLink = document.createElement("a");
+    kworkLink.href = "https://kwork.ru/user/avismirea";
+    kworkLink.target = "_blank";
+    kworkLink.rel = "noopener noreferrer";
+    kworkLink.textContent = "KWORK";
+
+    modalReviewFooter.replaceChildren(authorLink, document.createTextNode(" · отзыв с "), kworkLink);
   }
 
   modal.classList.add("is-open");

@@ -499,6 +499,16 @@ body {
   font-weight: 500;
 }
 
+.review-card__author {
+  color: #f7f7f3;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.review-card__author:hover {
+  color: rgba(243, 243, 241, 0.72);
+}
+
 .review-card__index {
   position: absolute;
   right: clamp(22px, 3vw, 34px);
