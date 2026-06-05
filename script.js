@@ -60,6 +60,7 @@ function openCaseModal(card) {
   if (hasReview) {
     modalReviewProject.textContent = card.dataset.reviewProject || "Отзыв";
     modalReviewText.textContent = card.dataset.reviewText;
+    modalReviewFooter.href = card.dataset.reviewUrl || "https://kwork.ru/user/avismirea";
     modalReviewFooter.textContent = `${card.dataset.reviewAuthor || "Клиент"} · отзыв с KWORK`;
   }
 
